@@ -143,13 +143,13 @@ class pe_split_ha_aws (
     cidr_block              => $ec2_vpc_cidr_block,
     availability_zone       => $ec2_availability_zone,
     map_public_ip_on_launch => true,
-    route_table             => $ec2_vpc_routetable_name,
+    route_table             => $ec2_vpc_route_table_name,
     tags                    => {
       created_by => $aws_username,
       department => $department
     },
     require                 => [
-      Ec2_vpc_routetable[ $ec2_vpc_routetable_name ]
+      Ec2_vpc_routetable[ $ec2_vpc_route_table_name ]
     ],
   }
 
