@@ -5,7 +5,7 @@ class pe_split_ha_aws::instances(
   String $ec2_availability_zone,
   String $ec2_image_id,
   String $ec2_vpc_subnet_name,
-  String $ec2_vpc_security_group_name_name,
+  String $ec2_vpc_security_group_name,
   String $ec2_inbound_ssh_ip
 ){
 
