@@ -155,14 +155,15 @@ class pe_split_ha_aws (
 
   # Create the instances once all the supporting VPC infrastructure is built
   class{ '::pe_split_ha_aws::instances':
-   aws_username          => $aws_username,
-   department            => $department,
-   ec2_region            => $ec2_region,
-   ec2_availability_zone => $ec2_availability_zone,
-   ec2_image_id          => $ec2_image_id,
-   ec2_vpc_cidr_block    => $ec2_vpc_cidr_block,  
-   ec2_inbound_ssh_ip    => $ec2_inbound_ssh_ip,
-   require               => [
+   aws_username                => $aws_username,
+   department                  => $department,
+   ec2_region                  => $ec2_region,
+   ec2_availability_zone       => $ec2_availability_zone,
+   ec2_image_id                => $ec2_image_id,
+   ec2_vpc_subnet_name         => $ec2_vpc_subnet_name,
+   ec2_vpc_security_group_name => $ec2_vpc_security_group_name,
+   ec2_inbound_ssh_ip          => $ec2_inbound_ssh_ip,
+   require                     => [
      Ec2_vpc_subnet[ $ec2_vpc_subnet_name ],
    ],
   }
