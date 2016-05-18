@@ -161,7 +161,7 @@ class pe_split_ha_aws (
    ec2_availability_zone       => $ec2_availability_zone,
    ec2_image_id                => $ec2_image_id,
    ec2_vpc_subnet_name         => $ec2_vpc_subnet_name,
-   ec2_vpc_security_group_name => $ec2_vpc_security_group_name,
+   ec2_security_group_name     => $ec2_security_group_name,
    ec2_inbound_ssh_ip          => $ec2_inbound_ssh_ip,
    require                     => [
      Ec2_vpc_subnet[ $ec2_vpc_subnet_name ],
