@@ -1,4 +1,4 @@
-class pe_ha_split_aws::instances(
+class pe_split_ha_aws::instances(
   String $aws_username,
   String $department,
   String $ec2_region,
