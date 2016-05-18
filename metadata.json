@@ -1,0 +1,15 @@
+{
+  "name": "gsarjeant-pe_split_ha_aws",
+  "version": "0.1.0",
+  "author": "gsarjeant",
+  "summary": "Manages an environment in AWS for testing a split PE HA infrastructure.",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
