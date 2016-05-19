@@ -64,7 +64,7 @@ account and to configure the AWS resources. You can create an entire HA environm
 by declaring the base class with the appropriate parameters as follows:
 
 ```puppet
-pe_split_ha_aws{
+class { '::pe_split_ha_aws':
   aws_username          => 'Nadine.Hurley',
   department            => 'drape-runner-silencing',
   ec2_region            => 'us-east-1',
@@ -74,6 +74,14 @@ pe_split_ha_aws{
   ec2_inbound_ssh_ip    => '100.101.102.103',
 }
 ```
+
+If you define these values in [hiera](https://docs.puppet.com/hiera/), then you can
+declare the class using the 'include' keyword.
+
+```puppet
+include pe_split_ha_aws
+```
+
 A brief explanation of each parameter follows in the [Usage](#Usage) section.
 
 ## Usage
