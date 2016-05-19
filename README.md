@@ -1,12 +1,12 @@
-# pe_split_ha_aws
+# pe\_split\_ha\_aws
 
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with pe_split_ha_aws](#setup)
-    * [What pe_split_ha_aws affects](#what-pe_split_ha_aws-affects)
+1. [Setup - Getting started with pe\_split\_ha\_aws](#setup)
+    * [What pe\_split\_ha\_aws affects](#what-pe_split_ha_aws-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with pe_split_ha_aws](#beginning-with-pe_split_ha_aws)
+    * [Beginning with pe\_split\_ha\_aws](#beginning-with-pe_split_ha_aws)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -17,7 +17,7 @@
 This module builds the infrastructure needed to provision a split, two-site
 highly-available (HA) implementation of Puppet Enterprise (PE) in Amazon EC2. 
 
-### What pe_split_ha_aws affects
+### What pe\_split\_ha\_aws affects
 
 The module will create the following entities in your AWS infrastructure:
 
@@ -43,7 +43,7 @@ The module will create the following entities in your AWS infrastructure:
 
 ## Setup
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 The pe\_split\_ha\_aws module requires the [puppetlabs/aws](https://github.com/puppetlabs/puppetlabs-aws)
 to be installed on your puppet master. 
@@ -56,8 +56,25 @@ You can manage these prerequisites with the [gsarjeant/aws_module_prereqs](https
 module. Please see that module's documentation for instructions if you prefer to manage
 these resources manually.
 
-### Beginning with pe_split_ha_aws
+### Beginning with pe\_split\_ha\_aws
 
+The \_pe\_split\_ha\_aws module has a number of required parameters with no defaults.
+These are necessary in order to give the module the correct information for your AWS account
+and to configure the AWS resources correctly. You can create an entire HA environment
+by declaring the base class with the appropriate parameters as follows:
+
+```puppet
+pe_split_ha_aws{
+  aws_username          => 'Nadine.Hurley',
+  department            => 'drape-runner-silencing',
+  ec2_region            => 'us-east-1',
+  ec2_availability_zone => 'us-east-1a',
+  ec2_image_id          => 'ami-775e4f16',
+  ec2_vpc_cidr_block    => '10.0.0.0/16',
+  ec2_inbound_ssh_ip    => '100.101.102.103',
+}
+```
+A brief explanation of each parameter follows in the [Usage](#Usage) section.
 
 ## Usage
 
