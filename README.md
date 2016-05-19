@@ -59,8 +59,8 @@ these resources manually.
 ### Beginning with pe\_split\_ha\_aws
 
 The \_pe\_split\_ha\_aws module has a number of required parameters with no defaults.
-These are necessary in order to give the module the correct information for your AWS account
-and to configure the AWS resources correctly. You can create an entire HA environment
+These are necessary in order to give the module the correct information for your AWS
+account and to configure the AWS resources. You can create an entire HA environment
 by declaring the base class with the appropriate parameters as follows:
 
 ```puppet
